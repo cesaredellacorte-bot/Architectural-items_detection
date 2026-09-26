@@ -144,4 +144,6 @@ For a guided, step-by-step walkthrough instead of the command line, see `noteboo
 
 ## License
 
-Add a license of your choice (e.g. MIT) — see [choosealicense.com](https://choosealicense.com/).
+MIT License
+
+Copyright (c) 2026 cesaredellacorte-bot
