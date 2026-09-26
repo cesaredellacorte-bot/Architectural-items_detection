@@ -1,6 +1,16 @@
 # YOLOv11 Object Detection
 
-Train and run a [YOLOv11](https://github.com/ultralytics/ultralytics) object detection model on a custom dataset, using the [Ultralytics](https://docs.ultralytics.com/) library. Everything — dataset download, integrity check, training, and inference — runs from a single file: `main.py`.
+**Objective:** train a custom object-detection model with [YOLOv11](https://github.com/ultralytics/ultralytics) that can recognize specific objects of interest in images. This repo is built so anyone can reproduce the exact same result — the dataset, training process, and evaluation are all automated and verifiable, not just described.
+
+**What it does:**
+1. Downloads the training dataset automatically from Google Drive, and verifies it hasn't been altered or corrupted using a SHA256 checksum
+2. Trains a YOLOv11 model on that dataset
+3. Evaluates the model and saves performance curves and prediction samples
+4. Runs the trained model on new images
+
+**Who it's for:** anyone who wants to reproduce this specific detection model, fine-tune it further, or use this repo as a template for training YOLOv11 on their own dataset. No GitHub or machine-learning experience is required to run it — see Usage below.
+
+Everything runs through the [Ultralytics](https://docs.ultralytics.com/) library.
 
 ## Requirements
 
@@ -10,8 +20,10 @@ Train and run a [YOLOv11](https://github.com/ultralytics/ultralytics) object det
 ## Installation
 
 ```bash
-git clone https://github.com/cesaredellacorte-bot/Architectural-items_detection/tree/main
-cd Architectural-items_detection
+git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+cd YOUR-REPO-NAME
+pip install -r requirements.txt
+```
 
 ## Dataset
 
@@ -21,6 +33,7 @@ This repository does not include the dataset itself (image datasets are too larg
 
 You don't have to do anything manually. Either:
 
+- **Double-click** `setup_and_download.bat` (Windows) or `setup_and_download.command` (Mac/Linux), **or**
 - Just run `python main.py` directly — it downloads the dataset automatically before training if it isn't there yet.
 
 Either way, the dataset is fetched from Google Drive, its integrity is verified, and it's unzipped into `./dataset/` — reused on every run after that.
@@ -96,6 +109,13 @@ Common options:
 
 Model weights (`yolo11n.pt`, etc.) download automatically the first time you run this. Training results (weights, metrics, plots) are saved to `runs/train/exp/`.
 
+## Notebooks
+
+For a guided, step-by-step walkthrough instead of the command line, see `notebooks/`:
+
+- `01_baseline.ipynb` — runs the stock pretrained model as a reference point, before any training
+- `02_training_eval.ipynb` — trains, evaluates, and saves curves/prediction samples into `results/`
+
 ## Project structure
 
 ```
@@ -124,6 +144,4 @@ Model weights (`yolo11n.pt`, etc.) download automatically the first time you run
 
 ## License
 
-MIT License
-
-Copyright (c) 2026 cesaredellacorte-bot
+Add a license of your choice (e.g. MIT) — see [choosealicense.com](https://choosealicense.com/).
