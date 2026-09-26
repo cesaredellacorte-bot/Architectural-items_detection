@@ -10,10 +10,8 @@ Train and run a [YOLOv11](https://github.com/ultralytics/ultralytics) object det
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
-cd YOUR-REPO-NAME
-pip install -r requirements.txt
-```
+git clone https://github.com/cesaredellacorte-bot/Architectural-items_detection/tree/main
+cd Architectural-items_detection
 
 ## Dataset
 
@@ -23,7 +21,6 @@ This repository does not include the dataset itself (image datasets are too larg
 
 You don't have to do anything manually. Either:
 
-- **Double-click** `setup_and_download.bat` (Windows) or `setup_and_download.command` (Mac/Linux), **or**
 - Just run `python main.py` directly — it downloads the dataset automatically before training if it isn't there yet.
 
 Either way, the dataset is fetched from Google Drive, its integrity is verified, and it's unzipped into `./dataset/` — reused on every run after that.
@@ -99,13 +96,6 @@ Common options:
 
 Model weights (`yolo11n.pt`, etc.) download automatically the first time you run this. Training results (weights, metrics, plots) are saved to `runs/train/exp/`.
 
-## Notebooks
-
-For a guided, step-by-step walkthrough instead of the command line, see `notebooks/`:
-
-- `01_baseline.ipynb` — runs the stock pretrained model as a reference point, before any training
-- `02_training_eval.ipynb` — trains, evaluates, and saves curves/prediction samples into `results/`
-
 ## Project structure
 
 ```
@@ -134,4 +124,6 @@ For a guided, step-by-step walkthrough instead of the command line, see `noteboo
 
 ## License
 
-Add a license of your choice (e.g. MIT) — see [choosealicense.com](https://choosealicense.com/).
+MIT License
+
+Copyright (c) 2026 cesaredellacorte-bot
