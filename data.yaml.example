@@ -1,0 +1,25 @@
+# ============================================================
+# Dataset configuration template for YOLOv11 (Ultralytics)
+# ------------------------------------------------------------
+# 1. Copy this file and rename the copy to "data.yaml"
+# 2. Edit the paths and class names below to match YOUR dataset
+# 3. Do NOT commit your real "data.yaml" if it points to private
+#    paths on your machine -- keep this ".example" file in the repo
+#    instead, so others can create their own.
+# ============================================================
+
+# Root folder of the dataset (relative to this file, or absolute path)
+path: ./dataset
+
+# Training / validation / (optional) test image folders, relative to "path"
+train: images/train
+val: images/val
+# test: images/test
+
+# Number of classes
+nc: 2
+
+# Class names (order matters -- must match your label files)
+names:
+  0: class_one
+  1: class_two
