@@ -1,0 +1,3 @@
+ultralytics==8.4.163
+roboflow>=1.1.0
+gdown
