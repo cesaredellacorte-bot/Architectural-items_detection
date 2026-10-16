@@ -1,13 +1,9 @@
-Validation split: 23 images, 1044 instances. Source: your Colab run (YOLO11n, 50 epochs, imgsz 640, batch 16).
-
 | Class | Precision | Recall | mAP50 | mAP50-95 |
 |---|---|---|---|---|
-| ALL | 0.563 | 0.458 | 0.391 | 0.247 |
-| Door | 0.510 | 0.779 | 0.711 | 0.443 |
-| Furniture | 0.291 | 0.394 | 0.223 | 0.132 |
-| Room | 0.518 | 0.835 | 0.746 | 0.532 |
-| Stairs | 0.559 | 0.225 | 0.228 | 0.150 |
-| Walls | 1.000 | 0.000 | 0.000 | 0.000 |
-| Window | 0.498 | 0.516 | 0.438 | 0.223 |
-
-Instances in val: {'Door': 249, 'Furniture': 259, 'Room': 272, 'Stairs': 40, 'Walls': 3, 'Window': 221}
+| ALL | 0.587 | 0.428 | 0.396 | 0.247 |
+| Door | 0.652 | 0.697 | 0.723 | 0.449 |
+| Furniture | 0.340 | 0.400 | 0.276 | 0.170 |
+| Room | 0.603 | 0.787 | 0.740 | 0.526 |
+| Stairs | 0.397 | 0.250 | 0.210 | 0.133 |
+| Walls | 1.000 | 0.000 | 0.003 | 0.002 |
+| Window | 0.530 | 0.433 | 0.425 | 0.202 |
