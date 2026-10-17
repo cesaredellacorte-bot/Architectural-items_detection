@@ -1,6 +1,6 @@
 # Architectural-items_detection - detecting doors, windows, furniture, stairs, rooms and walls in plan views (AECO)
 
-> Author: **Cesare Della Corte** (individual work) · Course: M4U3 · Last updated: **TODO(you): date**
+> Author: **Cesare Della Corte** (individual work) · Course: M4U3 · Last updated: 17/10/2026
 > Slides: [pdf_pack/slides.pdf](pdf_pack/slides.pdf) · Mini report: [pdf_pack/mini_report.pdf](pdf_pack/mini_report.pdf)
 
 ## 1. Problem and success criteria
@@ -24,7 +24,7 @@
 **Label rule (all classes):** the box contains only the basic lines that identify the element, with no surrounding context. Full definitions: [docs/class_definitions.md](docs/class_definitions.md). The cleaning step (`scripts/prepare_dataset.py`) merges `Furnitures` into `Furniture`, converts polygon rows to boxes and removes duplicate boxes.
 
 ## 3. Dataset
-- Dataset zip (YOLO format, Roboflow export): https://drive.google.com/file/d/1iVq3qa_xrTHb422iZmxqrK1AS8E2h0La/view?usp=sharing (public copy of Roboflow version 2 - TODO(you): confirm it is the same export)
+- Dataset zip (YOLO format, Roboflow export): https://drive.google.com/file/d/1iVq3qa_xrTHb422iZmxqrK1AS8E2h0La/view?usp=sharing (public copy of Roboflow version 2)
 - Roboflow project: https://app.roboflow.com/cesare-della-corte/architectural_items_detection_v1/2 (workspace `cesare-della-corte`, project `architectural_items_detection_v1`, **version 2**). The link needs a Roboflow login, so the Drive zip above is the public copy used by the notebook.
 - **Origin:** a small subset (about 110 images) cloned from the public Roboflow Universe dataset [cad-drawings](https://universe.roboflow.com/train-yu3wc/cad-drawings) (2,587 images, original classes door / window / zone, MIT licence). The author **re-annotated the images with six own classes** (Door, Furniture, Room, Stairs, Walls, Window) and made the train/valid split. The original labels were not used as they are. Citation and licence: section 8.
 - Split: train 88 images (87 usable) / valid 24 images (23 usable) = **about 80 / 20**
@@ -39,21 +39,20 @@
 5. Expected outputs: training curves, metrics table, `results/` evidence images, `results/run_info.md`
 No GPU? Set `FAST_VERIFY = True`: it runs 5 epochs and loads the real weights from the release below.
 
-**Weights:** TODO(you): GitHub Release link to `best.pt`
+**Weights:** (https://github.com/cesaredellacorte-bot/Architectural-items_detection/releases/tag/v1.0): GitHub Release link to `best.pt`
 Baseline (pretrained, no fine-tuning): [`notebooks/01_baseline_inference.ipynb`](notebooks/01_baseline_inference.ipynb)
 
 ## 5. Results summary (validation split, 23 images, 1044 instances)
-> **TODO: the table is from the first run (YOLO11n, before class merge). Replace it with `results/metrics.md` after the final YOLOv8 run on the cleaned dataset.**
 
 | Class | Precision | Recall | mAP50 | mAP50-95 |
 |---|---|---|---|---|
-| **ALL** | 0.563 | 0.458 | 0.391 | 0.247 |
-| Door | 0.510 | 0.779 | 0.711 | 0.443 |
-| Furniture | 0.291 | 0.394 | 0.223 | 0.132 |
-| Room | 0.518 | 0.835 | 0.746 | 0.532 |
-| Stairs | 0.559 | 0.225 | 0.228 | 0.150 |
-| Walls | 1.000 | 0.000 | 0.000 | 0.000 |
-| Window | 0.498 | 0.516 | 0.438 | 0.223 |
+| ALL | 0.587 | 0.428 | 0.396 | 0.247 |
+| Door | 0.652 | 0.697 | 0.723 | 0.449 |
+| Furniture | 0.340 | 0.400 | 0.276 | 0.170 |
+| Room | 0.603 | 0.787 | 0.740 | 0.526 |
+| Stairs | 0.397 | 0.250 | 0.210 | 0.133 |
+| Walls | 1.000 | 0.000 | 0.003 | 0.002 |
+| Window | 0.530 | 0.433 | 0.425 | 0.202 |
 
 Curves: ![curves](results/curves/results.png) · [metrics.md](results/metrics.md) · [evidence](results/evidence/)
 
@@ -64,14 +63,14 @@ Curves: ![curves](results/curves/results.png) · [metrics.md](results/metrics.md
 
 ## 6. Reproducibility checklist
 - [ ] Dataset: Google Drive zip `1iVq3qa_xrTHb422iZmxqrK1AS8E2h0La` (Roboflow export), train/valid about 80/20 - Roboflow version 2
-- [ ] Model variant: **TODO(decide)** - the run above used `yolo11n.pt`; the assignment asks for YOLOv8, so re-run with `yolov8n.pt` (notebook default) and update the numbers above
+- [ ] Model variant: yolov8n.pt - the run above used `yolo11n.pt`; the assignment asks for YOLOv8, so re-run with `yolov8n.pt` (notebook default) and update the numbers above
 - [ ] Epochs / batch / imgsz: `50 / 16 / 640`, seed `0`
 - [ ] Ultralytics version: `8.4.163` (pinned in `requirements.txt`; Python 3.13, torch 2.11, T4)
-- [ ] Weights available at: TODO(you)
+- [ ] Weights available at: (https://github.com/cesaredellacorte-bot/Architectural-items_detection/releases/tag/v1.0)
 - [ ] Notebook opens from GitHub and runs end-to-end after "Restart runtime -> Run all"
 
 ### Reproducibility proof
-- Last successful run: **TODO: copy from `results/run_info.md` after the final run** (the original run was on Colab, Tesla T4, 15 GB)
+- Last successful run: 2026-10-17 15:33 UTC (the original run was on Colab, Tesla T4, 15 GB)
 - Hardware: Tesla T4 GPU (Colab)
 - Expected runtime: about 2 min training (50 epochs) + about 2-4 min setup and download
 - Mode: full training
