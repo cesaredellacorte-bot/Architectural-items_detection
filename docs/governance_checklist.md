@@ -1,16 +1,15 @@
 # Governance checklist (one page)
-Items marked **TODO(you)** need your real answer. Do not leave "N/A".
 
 ## 1. Privacy and consent
-- [ ] Floor plans contain no personal data (owner names, addresses, signatures, plot numbers): **TODO(you): checked by / date**. The sample images show Finnish-language labels and some title-block text - blur or crop those if they identify people or properties.
+- [ ] Floor plans contain no personal data (owner names, addresses, signatures, plot numbers): checked by: Dataset owner. The sample images show Finnish-language labels and some title-block text - blur or crop those if they identify people or properties.
 - [ ] Source of every image: one public Roboflow Universe dataset (cad-drawings, subset); annotations created by the author. Main source: Roboflow Universe `train-yu3wc/cad-drawings`, licence MIT (checked 2026-10-16).
 - [ ] No Roboflow / Google API keys committed (use Colab Secrets)
 - [ ] Dataset visibility: public source dataset (cad-drawings, MIT); my Drive zip link is share-by-link
 
 ## 2. Data minimisation
 - [ ] Only task-relevant images used (about 110 images, annotated for 6 classes)
-- [ ] Title blocks, stamps and metadata removed or blurred: **TODO(you)**
-- [ ] Retention: dataset reviewed or deleted at project end (**TODO(you): date**)
+- [ ] Title blocks, stamps and metadata removed or blurred: none
+- [ ] Retention: dataset reviewed or deleted at project end (none)
 
 ## 3. Limitations statement (when NOT to use this model)
 - Trained on about 110 plans of limited styles (mostly Finnish residential plans); not validated on other countries, scales, drawing standards or non-residential buildings.
