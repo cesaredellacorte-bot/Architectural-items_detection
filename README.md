@@ -63,7 +63,7 @@ Curves: ![curves](results/curves/results.png) · [metrics.md](results/metrics.md
 
 ## 6. Reproducibility checklist
 - [ ] Dataset: Google Drive zip `1iVq3qa_xrTHb422iZmxqrK1AS8E2h0La` (Roboflow export), train/valid about 80/20 - Roboflow version 2
-- [ ] Model variant: yolov8n.pt - the run above used `yolo11n.pt`; the assignment asks for YOLOv8, so re-run with `yolov8n.pt` (notebook default) and update the numbers above
+- [ ] Model variant: yolov8n.pt; the assignment asks for YOLOv8, so re-run with `yolov8n.pt` (notebook default) and update the numbers above
 - [ ] Epochs / batch / imgsz: `50 / 16 / 640`, seed `0`
 - [ ] Ultralytics version: `8.4.163` (pinned in `requirements.txt`; Python 3.13, torch 2.11, T4)
 - [ ] Weights available at: (https://github.com/cesaredellacorte-bot/Architectural-items_detection/releases/tag/v1.0)
