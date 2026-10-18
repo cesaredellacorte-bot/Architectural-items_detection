@@ -1,0 +1,40 @@
+# Parameters, versions and hashes of the reported run (written by notebook cell 8; values below = reported run)
+dataset:
+  url: https://github.com/cesaredellacorte-bot/Architectural-items_detection/releases/download/dataset-v2/architectural_items_v2_yolov8.zip
+  sha256: 7e70aedcd900e5e7c4e0b7993dc7d33c736a4eaeeb239296382a768afdb2cb48
+  size_bytes: 6398935
+  roboflow: cesare-della-corte/architectural_items_detection_v1/2
+  roboflow_export: 2026-09-24 22:29 GMT, YOLOv8 format, auto-orient, resize 640x640 (stretch), no augmentation
+  splits: {train: 88, valid: 24, test: 12}
+  raw_classes: [Door, Furniture, Furnitures, Room, Stairs, Walls, Window]
+  class_merge: {Furnitures: Furniture}
+  classes: [Door, Furniture, Room, Stairs, Walls, Window]
+train:
+  model: yolov8n.pt
+  epochs: 50
+  batch: 16
+  imgsz: 640
+  seed: 0
+  deterministic: true
+  optimizer: auto
+  lr0: 0.01
+  augmentation: ultralytics defaults (mosaic 1.0, fliplr 0.5, hsv, scale 0.5, translate 0.1)
+  full_args: results/curves/args.yaml
+eval:
+  split: val
+  conf_evidence: 0.25
+  match_iou: 0.5
+weights:
+  release_url: https://github.com/cesaredellacorte-bot/Architectural-items_detection/releases/download/v1.0/best.pt
+  sha256: 65b7d90e13729e141e74d8871b8139fb27b51d93822a82c87e24a27876a3b571
+env_training:
+  platform: Google Colab, Tesla T4
+  python: 3.13.15
+  ultralytics: 8.4.163
+  torch: 2.11.0+cu130
+env_verification:
+  platform: Linux, CPU only (2026-10-18)
+  python: 3.13.16
+  ultralytics: 8.4.163
+  torch: 2.14.1
+  metrics_match_reported: true
